@@ -1,0 +1,33 @@
+{
+    "name": "bitskins-price-watcher",
+    "version": "1.0.0",
+    "description": "Bot to watch Prices from Bitskins and soon to notify the user",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ned98/bitskins-price-watcher.git"
+    },
+    "keywords": [],
+    "author": "Nedyalko Angelov",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cron": "^1.8.2",
+        "ejs": "^3.1.5",
+        "fs": "0.0.1-security",
+        "jquery": "^3.5.1",
+        "jsdom": "^16.4.0",
+        "nodemon": "^2.0.4",
+        "notp": "^2.0.3",
+        "pusher-client": "^1.1.0",
+        "request": "^2.88.2",
+        "thirty-two": "^1.0.2"
+    },
+    "bugs": {
+        "url": "https://github.com/ned98/bitskins-price-watcher/issues"
+    },
+    "homepage": "https://github.com/ned98/bitskins-price-watcher"
+}

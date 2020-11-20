@@ -1,0 +1,206 @@
+@font-face {
+    src: url(Gilroy-Bold.ttf);
+    font-family: Gilroy;
+}
+
+* {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
+
+body {
+    background-image: url("../images/background.jpg");
+    color: #eee !important;
+}
+
+.container-fluid {
+    text-align: center !important;
+    padding: 0 25px !important;
+}
+
+.card {
+    border: none;
+    max-width: 600px;
+    background-color: #001f3f;
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 70px 190px 85px;
+    grid-template-areas:
+            "header"
+            "image"
+            "footer";
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 16% 16% 16% 16% 16% 16%;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 15px 15px;
+    grid-template-areas:
+      ". . . . . ."
+      ". . . . . ."
+      ". . . . . .";
+  }
+
+.card-header {
+    grid-area: header !important;
+}
+
+.card-title {
+    color:#eee;
+}
+
+.image-size {
+    margin-top: 20px;
+    width: 210px;
+    height: 150px;
+}
+
+.card-image {
+    border-top: none !important;
+    border-bottom: none !important;
+    grid-area: image !important;
+}
+
+.card-footer {
+    grid-area: footer !important;
+    max-height: 85px;
+    color: #eee;
+}
+
+.title {
+    margin: 10px 0 10px;
+    color: #f2f2f2;
+    display: inline-block;
+    font-weight: 500;
+}
+
+#account-balance {
+    width: 200px;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.balance-text, .balance-val {
+    float: left;
+}
+
+.lowest-price-val {
+    margin-left: 6px;
+}
+
+.lowest-li, .buy-price-li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.balance-val {
+    margin-left: 6px;
+}
+
+.items {
+    margin-top: 50px;
+}
+
+.bg-header, .bg-footer {
+    background-color: #232220;
+}
+
+.bg-body {
+    background-color: #464646;
+}
+
+.list-group {
+    
+    list-style-type: none;
+    float: left;
+}
+
+li {
+    width: 240px;
+}
+
+@media screen and (max-width: 958px) {
+
+    .card {
+        max-width: 280px;
+        grid-template-columns: 280px;
+    }
+    
+    .grid-container {
+        grid-template-columns: 33% 33% 33%;
+        gap: 15px 10px;
+        grid-template-areas:
+          ". . . "
+          ". . . "
+          ". . . ";
+      }
+
+}
+
+@media only screen and (min-width: 959px) and (max-width: 1199px) {
+
+    .card {
+        max-width: 280px;
+        grid-template-columns: 280px;
+    }
+    
+    .grid-container {
+        grid-template-columns: 33% 33% 33%;
+        gap: 10px 5px;
+        grid-template-areas:
+          ". . . "
+          ". . . "
+          ". . . ";
+      }
+
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1499px) {
+
+    .card {
+        max-width: 280px;
+        grid-template-columns: 280px;
+    }
+    
+    .grid-container {
+        grid-template-columns: 25% 25% 25% 25%;
+        gap: 15px 5px;
+        grid-template-areas:
+          ". . . . "
+          ". . . . "
+          ". . . . ";
+      }
+
+}
+
+@media only screen and (min-width: 1500px) and (max-width: 1799px) {
+
+    .card {
+        max-width: 280px;
+        grid-template-columns: 280px;
+    }
+    
+    .grid-container {
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        gap: 15px 5px;
+        grid-template-areas:
+          ". . . . . "
+          ". . . . . "
+          ". . . . . ";
+      }
+}
+
+@media only screen and (min-width: 1800px)  {
+
+    .card {
+        max-width: 280px;
+        grid-template-columns: 280px;
+    }
+    
+    .grid-container {
+        grid-template-columns: 16% 16% 16% 16% 16% 16%;
+        gap: 10px 5px;
+        grid-template-areas:
+          ". . . . . . "
+          ". . . . . . "
+          ". . . . . . ";
+      }
+}

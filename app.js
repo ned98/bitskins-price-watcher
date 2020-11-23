@@ -2,20 +2,21 @@ const path = require('path');
 fs = require('fs');
 const express = require('express');
 let config = require('./config');
-const app = express();
 const port = 3000;
+const app = express();
 let log = console.log;
+
+// Discord API
+const Discord = require("discord.js");
+const client = new Discord.Client();
+client.login(config.discord.token);
+client.on('ready', () => {
+    log(`Logged in as ${client.user.tag}` + '\n');
+})
 
 const request = require('request');
 const totp = require('notp').totp;
 const base32 = require('thirty-two');
-
-const router = express.Router();
-
-// Import controller
-//var api = require('./views/api');
-
-//app.use(bodyParser.urlencoded({ extended: true })); //  if data comes from HTML form
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -191,6 +192,8 @@ request(options, (error, response, body) => {
 
                     // *********************** CONSOLE.LOG THE ITEMS ***********************
                     // log(`${body.data.items[i].market_hash_name}: $${body.data.items[i].lowest_price} | Buy range: $${value}`);
+                    // log("###################################################################################################################");
+                    //log("                                                                                                              ");
                 }
             }
         }
@@ -231,9 +234,10 @@ events_channel.bind('listed', function (data) {
 
 events_channel.bind('price_changed', function (data) {
     if (data.app_id === "730") {
-
         for (let [key, value] of Object.entries(skins)) {
             if (data.market_hash_name === key && data.price <= value) {
+                client.channels.cache.get('780414429706715168')
+                    .send(`${unixTimeToDate(data)} ${data.market_hash_name} price changed to $${data.price}. Buy price: $${value}` + '\n');
                 log(`${unixTimeToDate(data)} ${data.market_hash_name} price changed to $${data.price}. Buy price: $${value}` + '\n');
             }
         }

@@ -7,7 +7,7 @@ const app = express();
 let log = console.log;
 
 // Discord API
-const Discord = require("discord.js");
+const Discord = require('discord.js');
 const client = new Discord.Client();
 client.login(config.discord.token);
 client.on('ready', () => {
@@ -22,9 +22,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static('views'));
-app.use(express.static("public"));
-app.use(express.static(path.join(__dirname, 'views')));
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static('public'));
 
 // Declaration of API & Secret
 let code = totp.gen(base32.decode(config.bitskins.code));
@@ -33,10 +31,9 @@ let api_key = config.bitskins.api_key;
 let rawdata = fs.readFileSync('skins.json');
 let skins = JSON.parse(rawdata);
 
-const jsdom = require("jsdom");
+const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 const { window } = new JSDOM("");
-const $ = require("jquery")(window);
 const dom = new JSDOM(`
 <!DOCTYPE html>
 <html lang="en">
@@ -189,11 +186,6 @@ request(options, (error, response, body) => {
                         `${dom.serialize()}`, function (err) {
                             if (err) return console.log(err);
                         });
-
-                    // *********************** CONSOLE.LOG THE ITEMS ***********************
-                    // log(`${body.data.items[i].market_hash_name}: $${body.data.items[i].lowest_price} | Buy range: $${value}`);
-                    // log("###################################################################################################################");
-                    //log("                                                                                                              ");
                 }
             }
         }
@@ -245,7 +237,7 @@ events_channel.bind('price_changed', function (data) {
 });
 
 function unixTimeToDate(data) {
-    let unix_timestamp = data.broadcasted_at;
+    var unix_timestamp = data.broadcasted_at;
     var date = new Date(unix_timestamp * 1000);
     var hours = date.getHours();
     var minutes = "0" + date.getMinutes();

@@ -182,7 +182,7 @@ request(options, (error, response, body) => {
                     card.append(cardFooter);
                     cardList.append(card);
 
-                    fs.writeFile('C:/Users/NEDI/Desktop/Bitskins/views/index.ejs',
+                    fs.writeFile('/Bitskins/views/index.ejs',
                         `${dom.serialize()}`, function (err) {
                             if (err) return console.log(err);
                         });

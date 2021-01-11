@@ -184,7 +184,7 @@ request(options, (error, response, body) => {
 
                     fs.writeFile('/Bitskins/views/index.ejs',
                         `${dom.serialize()}`, function (err) {
-                            if (err) return console.log(err);
+                            if (err) console.log(err);
                         });
                 }
             }

@@ -5,4 +5,4 @@
 5. http://localhost:3000/
 
 
-Message me on Discord if you need help - Ned#3938
+Message me on Discord, if you need help - Ned#3938
